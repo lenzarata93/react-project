@@ -1,0 +1,31 @@
+nav {
+    background-color: #333; /* Цвят на навигационната лента */
+    overflow: hidden;
+  }
+  
+  nav ul {
+    list-style-type:none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+  }
+  
+  nav li {
+    margin: 25px;
+  }
+  
+  nav li a {
+    display:flex;
+    color: white; /* Цвят на текста */
+    text-align:start ;
+    padding: 5px 35px;
+    text-decoration: wavy;
+    font-family: fantasy; 
+    font-style: oblique;
+    font-size: 25px;
+ }
+
+  nav li a:hover {
+    background-color: #4d4848; 
+  }
+  
