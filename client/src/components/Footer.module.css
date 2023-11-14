@@ -1,0 +1,8 @@
+footer {
+    background-color: #333; /* Цвят на футъра */
+    font-family: fantasy;
+    text-decoration: solid;
+    color: white; /* Цвят на текста */
+    text-align: center;
+    padding: 20px 20px; /* Отстояние отгоре и отдолу */
+  }
