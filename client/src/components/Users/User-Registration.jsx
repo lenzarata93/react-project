@@ -1,3 +1,5 @@
+import styles from "../Users/User-Registration.module.css"
+
 export default function Registration(){
     return (
       <>
