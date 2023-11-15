@@ -6,10 +6,10 @@ export const create= async(placeData) =>{
         headers: {
             'content-type' : 'application/json'
         },
-        body: JSON.stringify()
+        body: JSON.stringify(placeData)
     });
     const result = await response.json();
 
-    
+
     return result;
 }

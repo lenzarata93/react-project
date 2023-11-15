@@ -1,9 +1,13 @@
+import {create} from '../../services/createPlace'
+
 export default function PlacesAdd(){
-  const createPlace = (e) =>{
+  const createPlace = async (e) =>{
     e.preventDefault();
 
     const placeData = Object.fromEntries(new FormData(e.currentTarget));
-    console.log(placeData);
+    //console.log(placeData);
+    const result=await create(placeData);
+    console.log(result)
   }
     return (
       <section>
