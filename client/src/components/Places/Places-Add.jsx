@@ -1,8 +1,14 @@
 export default function PlacesAdd(){
+  const createPlace = (e) =>{
+    e.preventDefault();
+
+    const placeData = Object.fromEntries(new FormData(e.currentTarget));
+    console.log(placeData);
+  }
     return (
       <section>
         <h1><center>Добави обект </center></h1>
-<form action="/submit" method="post" encType="multipart/form-data">
+<form onSubmit={createPlace}>
   <label htmlFor="name">Име:</label>
   <input type="text" id="name" name="name" required="" />
   <label htmlFor="location">Местоположение:</label>
