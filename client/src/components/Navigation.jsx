@@ -9,7 +9,7 @@ export default function Navigation(){
 
     <li><Link to="/">Начало</Link></li>
     <li><Link to="/places">Обекти</Link></li>
-    <li><Link to="/places/add">Добави обект</Link></li>
+    <li><Link to="/places/create">Добави обект</Link></li>
     <li><Link to="/about">За нас</Link></li>
     <li><Link to="/registration">Регистрация</Link></li>
     <li><Link to="/login">Вход</Link></li>

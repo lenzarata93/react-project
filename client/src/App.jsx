@@ -13,7 +13,7 @@ function App() {
      <Navigation />
      <Routes>
       <Route path='/places' element = { <PlacesList />} />
-      <Route path='/places/add' element = { <PlacesAdd />} />
+      <Route path='/places/create' element = {<PlacesAdd />} />
       <Route path='/registration' element={<Registration />} />
       <Route path='/login' element = {<Login />} />
      </Routes>

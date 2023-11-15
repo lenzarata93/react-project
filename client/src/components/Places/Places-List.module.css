@@ -1,3 +1,17 @@
 .places-container {
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+article {
+  display:flex;
+  justify-content:space-between;
+  flex-shrink: inherit;
+
+}
+article img {
+  width: 300px;
+  height:200px;
+  
 }

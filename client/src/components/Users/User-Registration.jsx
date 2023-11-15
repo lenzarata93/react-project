@@ -1,4 +1,5 @@
 import styles from "../Users/User-Registration.module.css"
+import {Link} from "react-router-dom"
 
 export default function Registration(){
     return (
@@ -27,7 +28,7 @@ export default function Registration(){
   <br />
   <input type="submit" defaultValue="Регистрация" />
   <p>
-    Вече имаш регистрация? <a href="/register">Влез</a>
+    Вече имаш регистрация? <Link to="/login">Влез</Link>
   </p>
 </form>
 
