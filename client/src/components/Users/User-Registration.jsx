@@ -1,6 +1,7 @@
 export default function Registration(){
     return (
-        <form action="/register" method="post">
+      <>
+      <form method="post">
   <label htmlFor="username">Потребителско име:</label>
   <input type="text" id="username" name="username" required="" />
   <br />
@@ -28,6 +29,7 @@ export default function Registration(){
   </p>
 </form>
 
-
+      </>
+        
     )
 };

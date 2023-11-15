@@ -1,18 +1,19 @@
 import styles from '../components/Navigation.module.css'
+import {Link} from 'react-router-dom'
 
 export default function Navigation(){
     return(
 <nav>
   <ul>
-  <a href="/"><img src="https://bulgaria-air.eu/images/logos/bulgaria-travel.png" alt="Лого"/></a>
+  <Link to="/places"><img src="https://bulgaria-air.eu/images/logos/bulgaria-travel.png" alt="Лого"/></Link>
 
-    <li><a href="">Начало</a></li>
-    <li><a href="">Обекти</a></li>
-    <li><a href="">Добави обект</a></li>
-    <li><a href="">За нас</a></li>
-    <li><a href="">Регистрация</a></li>
-    <li><a href="">Вход</a></li>
-    <li><a href="">Изход</a></li>
+    <li><Link to="/">Начало</Link></li>
+    <li><Link to="/places">Обекти</Link></li>
+    <li><Link to="/places/add">Добави обект</Link></li>
+    <li><Link to="/about">За нас</Link></li>
+    <li><Link to="/registration">Регистрация</Link></li>
+    <li><Link to="/login">Вход</Link></li>
+    <li><Link to="/logout">Изход</Link></li>
   </ul>
 </nav>
 
