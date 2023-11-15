@@ -2,12 +2,18 @@ nav {
     background-color: #333; /* Цвят на навигационната лента */
     overflow: hidden;
   }
+img {
+width: 120px;
+height: 130px;
+}
+
   
   nav ul {
     list-style-type:none;
-    margin: 0px;
+    margin:0px;
     padding: 0px;
     display: flex;
+    height: 130px;
   }
   
   nav li {

@@ -4,6 +4,8 @@ export default function Navigation(){
     return(
 <nav>
   <ul>
+  <a href="/"><img src="https://bulgaria-air.eu/images/logos/bulgaria-travel.png" alt="Лого"/></a>
+
     <li><a href="">Начало</a></li>
     <li><a href="">Обекти</a></li>
     <li><a href="">Добави обект</a></li>
