@@ -1,10 +1,22 @@
+import styles from '../../components/Places/Places-List.module.css'
+
 export default function PlacesList(){
 return(
-
-    <article>
+<div className='places-container'>
+<article className='places'>
         <h2>Име</h2>
-        <img href="https://www.btsbg.org/sites/default/files/styles/768x576/public/obekti/vruh-vihren.jpg?itok=QiMyjWfE"></img>
+        <img href="" src="https://www.btsbg.org/sites/default/files/styles/768x576/public/obekti/peshtera-magurata.jpg?itok=Oo6Htpsb"></img>
+        <h2>Местоположение</h2>
         <p>Описание</p>
     </article>
+
+<article className="places">
+<h2>Име</h2>
+<img href="" src="https://blog.luxury-discounts.com/wp-content/uploads/%D0%A8%D0%98%D0%9F%D0%9A%D0%90-1-1536x1106.jpg"></img>
+<h2>Местоположение</h2>
+<p>Описание</p>
+</article>
+</div>
+
 )
 };
