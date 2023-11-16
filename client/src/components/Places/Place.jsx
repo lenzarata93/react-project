@@ -1,10 +1,15 @@
-export default function Place(){
+export default function Place({
+    imgUrl,
+    name,
+    description,
+    location,
+}){
 return(
     <article className="article">
-        <img href="" src="https://www.btsbg.org/sites/default/files/styles/768x576/public/obekti/peshtera-magurata.jpg?itok=Oo6Htpsb"></img>
-        <h2>Име</h2>
-        <p>Описание</p>
-        <h2>Местоположение</h2>
+        <img href="" src={imgUrl}></img>
+        <h2>{name}</h2>
+        <h2>{location}</h2>
+        <p><button>Повече за обекта</button></p>
     </article>
 )
 
