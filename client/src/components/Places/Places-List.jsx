@@ -1,6 +1,21 @@
-import styles from '../../components/Places/Places-List.module.css'
+import { useEffect, useState } from 'react';
+import * as placeServive from '../../services/placeService';
+import styles from '../../components/Places/Places-List.module.css';
+
+
 
 export default function PlacesList(){
+    const [places,setPlaces]=useState([]);
+    useEffect(()=>{
+       placeServive.getAll()
+       .then(result =>setPlaces(result))
+
+
+    },[]);
+
+    console.log(places);
+
+
 return(
 <div className='places-container'>
 

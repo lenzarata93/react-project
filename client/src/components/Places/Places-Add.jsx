@@ -1,4 +1,4 @@
-import {create} from '../../services/createPlace';
+import {create} from '../../services/placeService';
 import {useNavigate} from 'react-router-dom';
 
 export default function PlacesAdd(){
