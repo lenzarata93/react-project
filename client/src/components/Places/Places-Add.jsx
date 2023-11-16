@@ -1,13 +1,17 @@
-import {create} from '../../services/createPlace'
+import {create} from '../../services/createPlace';
+import {useNavigate} from 'react-router-dom';
 
 export default function PlacesAdd(){
+  const navigate=useNavigate();
   const createPlace = async (e) =>{
     e.preventDefault();
 
     const placeData = Object.fromEntries(new FormData(e.currentTarget));
     //console.log(placeData);
     const result=await create(placeData);
-    console.log(result)
+    console.log(result);
+    navigate('/places');
+
   }
     return (
       <section>
