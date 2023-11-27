@@ -1,9 +1,9 @@
-import { request } from "../lib/requester";
+import * as request from "../lib/requester";
 
 const baseUrl = `http://localhost:3030/jsonstore/places`;
 
 export const getAll = async() => {
-    const result=await request('GET',baseUrl);
+    const result=await request.get(baseUrl);
     return Object.values(result);
 
 
@@ -14,15 +14,7 @@ export const getAll = async() => {
 
 
 export const create= async(placeData) =>{
-   const response= await fetch(`${baseUrl}`,{
-        method: `POST`,
-        headers: {
-            'content-type' : 'application/json'
-        },
-        body: JSON.stringify(placeData)
-    });
-    const result = await response.json();
+  const result = await request.post(baseUrl,placeData);
+     return result;
+};
 
-
-    return result;
-}
