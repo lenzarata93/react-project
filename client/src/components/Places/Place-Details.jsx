@@ -6,9 +6,9 @@ import { useState } from "react";
 export default function PlaceDetails(){
     const [place,setPlace] = useState({});
 
-    const placeId = useParams();
-    const id = placeId.id;
+    const {id} = useParams();
     console.log(id)
+  
 useEffect(()=>{
 placeService.getOne(id)
     .then(setPlace);

@@ -19,6 +19,7 @@ export const create= async(placeData) =>{
 };
 export const getOne = async (placeId) => {
     const result = await request.get(`${baseUrl}/${placeId}`);
+    console.log(`in getOne result is : ${result}`)
 
     return result;
 };
