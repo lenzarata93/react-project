@@ -12,14 +12,23 @@ return options;
 }
 
 
-export const request =async (method,url,data)=>{
-const response = await  fetch (url,{
-    method,
-    ...buildOptions(data),
-});
-const result = await response.json();
-return result;
+const request = async (method, url, data) => {
+    const response = await fetch(url, {
+        ...buildOptions(data),
+        method,
+    });
 
+    if (response.status === 204) {
+        return {};
+    }
+
+    const result = await response.json();
+
+    if (!response.ok) {
+        throw result;
+    } 
+
+    return result;
 };
 
 export const get = request.bind(null,'GET');

@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
+
 export default function Place({
+    _id,
     imgUrl,
     name,
     description,
@@ -6,10 +9,10 @@ export default function Place({
 }){
 return(
     <article className="article">
-        <img href="" src={imgUrl}></img>
+        <img  src={imgUrl}></img>
         <h2>{name}</h2>
         <h2>{location}</h2>
-        <p><button>Повече за обекта</button></p>
+        <p><Link to={`/places/${_id}`}>Повече за обекта</Link></p>
     </article>
 )
 

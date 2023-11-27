@@ -17,4 +17,9 @@ export const create= async(placeData) =>{
   const result = await request.post(baseUrl,placeData);
      return result;
 };
+export const getOne = async (placeId) => {
+    const result = await request.get(`${baseUrl}/${placeId}`);
+
+    return result;
+};
 
