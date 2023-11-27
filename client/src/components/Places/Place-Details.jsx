@@ -6,18 +6,20 @@ import { useState } from "react";
 export default function PlaceDetails(){
     const [place,setPlace] = useState({});
 
-    const {placeId} = useParams();
+    const placeId = useParams();
+    const id = placeId.id;
+    console.log(id)
 useEffect(()=>{
-placeService.getOne(placeId)
+placeService.getOne(id)
     .then(setPlace);
-}, [placeId]);
+}, [id]);
 console.log(place);
 return (
     <div className="details-container">
     <h1>{place.name}</h1>
-    <img src="PIC" alt=" Image"/>
-    <p>Opisanie </p>
-    <p><strong>Местоположение:</strong> LOKACIQ</p>
+    <img src = {place.imgUrl} alt={place.name}/>
+    <p>{place.description} </p>
+    <p><strong>Местоположение:</strong> {place.location}</p>
 </div>
 )
 };
