@@ -9,3 +9,11 @@ const result = await request.post(`${baseUrl}/login`,{
 return result;
 
 };
+export const register =async (email,password,username) =>{
+    const result = await request.post(`${baseUrl}/register`,{
+        email,
+        password,
+        username
+    });
+    console.log('Result from API:', result); 
+}

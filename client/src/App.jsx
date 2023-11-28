@@ -22,8 +22,13 @@ function App() {
     navigate('/')
   };
 
-  const registerSubmitHandler = (values) =>{
-    console.log(values)
+  const registerSubmitHandler = async (values) =>{
+    console.log(values.username);
+    const result = await authService.register(values.email,values.password,values.username);
+
+    console.log(`The result is : ${result}`)
+    setAuth(result);
+    navigate('/');
   }
 
   const values = {
