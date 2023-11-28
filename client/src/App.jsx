@@ -20,10 +20,15 @@ function App() {
     console.log(result);
     setAuth(result);
     navigate('/')
+  };
+
+  const registerSubmitHandler = (values) =>{
+    console.log(values)
   }
 
   const values = {
     loginSubmitHandler,
+    registerSubmitHandler,
     username : auth.username,
     email : auth.email,
     isAuth : !!auth.email,
