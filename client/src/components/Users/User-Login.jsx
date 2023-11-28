@@ -1,13 +1,30 @@
+import { useForm } from "../hooks/useForm"
+
 export default function Login(){
+const {values,changeHandler,onSubmit} = useForm({
+  email : '',
+  password : '',
+});
+
     return(
 <>
-  <form action="/login" method="post">
-    <label htmlFor="username">Потребителско име:</label>
-    <input type="text" id="username" name="username" required="" />
+  <form onSubmit={onSubmit}>
+    <label htmlFor="email">Email:</label>
+    <input
+    type="text"
+    id="email"
+    name="email"
+    value={values.email}
+    onChange={onChange}/>
     <br />
     <br />
     <label htmlFor="password">Парола:</label>
-    <input type="password" id="password" name="password" required="" />
+    <input
+    type="password"
+    id="password"
+    name="password"
+    value={values.password}
+    onChange={onChange} />
     <br />
     <br />
     <input type="submit" defaultValue="Вход" />
