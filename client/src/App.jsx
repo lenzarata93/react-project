@@ -7,6 +7,7 @@ import Login from "./components/Users/User-Login"
 import Registration from "./components/Users/User-Registration"
 import PlaceDetails from './components/Places/Place-Details'
 import { useState } from 'react'
+import AuthContext from './components/contexts/authContext'
 
 function App() {
   const [auth,setAuth] = useState({});
@@ -16,6 +17,7 @@ function App() {
   }
  
   return (
+    <AuthContext.Provider value={{loginSubmitHandler}}>
     <div id="page">
      <Navigation />
      <Routes>
@@ -23,11 +25,12 @@ function App() {
       <Route path='/places/create' element = {<PlacesAdd />} />
       <Route path='/places/:id' element = {<PlaceDetails />} />
       <Route path='/registration' element={<Registration />} />
-      <Route path='/login' element = {<Login  loginSubmitHandler={loginSubmitHandler}/>} />
+      <Route path='/login' element = {<Login />} />
      </Routes>
  
      <Footer />
     </div>
+    </AuthContext.Provider>
   )
 }
 
