@@ -15,5 +15,6 @@ export const register =async (email,password,username) =>{
         password,
         username
     });
-    console.log('Result from API:', result); 
+    console.log('Result from API:', result);
+    return result; 
 }

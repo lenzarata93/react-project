@@ -23,10 +23,10 @@ function App() {
   };
 
   const registerSubmitHandler = async (values) =>{
-    console.log(values.username);
+    console.log(values);
     const result = await authService.register(values.email,values.password,values.username);
 
-    console.log(`The result is : ${result}`)
+    console.log(`The result is : ${result.username}`)
     setAuth(result);
     navigate('/');
   }
