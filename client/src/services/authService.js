@@ -17,4 +17,5 @@ export const register =async (email,password,username) =>{
     });
     console.log('Result from API:', result);
     return result; 
-}
+};
+export const logout = async () => request.get(`${baseUrl}/logout`);

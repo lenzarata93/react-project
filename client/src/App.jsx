@@ -4,6 +4,7 @@ import Footer from "./components/Footer"
 import PlacesList from "./components/Places/Places-List"
 import PlacesAdd from "./components/Places/Places-Add"
 import Login from "./components/Users/User-Login"
+import Logout from './components/Users/Logout'
 import Registration from "./components/Users/User-Registration"
 import PlaceDetails from './components/Places/Place-Details'
 import { useState } from 'react'
@@ -12,13 +13,17 @@ import * as authService from './services/authService'
 
 function App() {
   const navigate = useNavigate();
-  const [auth,setAuth] = useState({});
+  const [auth,setAuth] = useState(()=>{
+    localStorage.removeItem('accessToken');
+    return {};
+  });
 
   const loginSubmitHandler = async(values) => {
     console.log(values);
     const result = await authService.login(values.email,values.password)
     console.log(result);
     setAuth(result);
+    localStorage.setItem('accessToken', result.accessToken);
     navigate('/')
   };
 
@@ -28,15 +33,23 @@ function App() {
 
     console.log(`The result is : ${result.username}`)
     setAuth(result);
+    localStorage.setItem('accessToken', result.accessToken);
     navigate('/');
+  };
+
+  const logoutHandler =() => {
+    setAuth({});
+    localStorage.removeItem('accessToken');
+   
   }
 
   const values = {
     loginSubmitHandler,
     registerSubmitHandler,
+    logoutHandler,
     username : auth.username,
     email : auth.email,
-    isAuth : !!auth.email,
+    isAuth : !!auth.accessToken,
   }
  
   return (
@@ -49,6 +62,7 @@ function App() {
       <Route path='/places/:id' element = {<PlaceDetails />} />
       <Route path='/registration' element={<Registration />} />
       <Route path='/login' element = {<Login />} />
+      <Route path='/logout' element = {<Logout />} />
      </Routes>
  
      <Footer />
