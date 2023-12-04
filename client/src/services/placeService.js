@@ -1,6 +1,6 @@
 import * as request from "../lib/requester";
 
-const baseUrl = `http://localhost:3030/jsonstore/places`;
+const baseUrl = `http://localhost:3030/data/places`;
 
 export const getAll = async() => {
     const result=await request.get(baseUrl);
