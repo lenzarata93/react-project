@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import styles from '../Places/Place.module.css'
 export default function Place({
     _id,
     imgUrl,
@@ -8,7 +8,7 @@ export default function Place({
     location,
 }){
 return(
-    <article className="article">
+    <article className= {styles.article}>
         <img  src={imgUrl}></img>
         <h2>{name}</h2>
         <h2>{location}</h2>

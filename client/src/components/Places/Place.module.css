@@ -1,0 +1,40 @@
+/* Стилове за структурата на статията */
+.article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .article img {
+    width: 100%;
+    max-width: 300px; /* Максимална ширина на изображението */
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .article h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .article p {
+    margin-bottom: 15px;
+  }
+  
+  .article a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+  }
+  
+  .article a:hover {
+    color: #0056b3;
+  }
+  
