@@ -8,12 +8,14 @@ export default function Place({
     location,
 }){
 return(
+    <div className={styles.container} >
     <article className= {styles.article}>
         <img  src={imgUrl}></img>
         <h2>{name}</h2>
         <h2>{location}</h2>
         <p><Link to={`/places/${_id}`}>Повече за обекта</Link></p>
     </article>
+    </div>
 )
 
 };
