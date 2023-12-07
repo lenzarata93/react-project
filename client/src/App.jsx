@@ -12,6 +12,8 @@ import AuthContext from './components/contexts/authContext'
 import * as authService from './services/authService'
 import AuthGuard from './components/AuthGuard'
 import PlaceEdit from './components/Places/Place-Edit'
+import Home from './components/Home'
+import About from './components/About'
 
 function App() {
   const navigate = useNavigate();
@@ -62,11 +64,13 @@ function App() {
     <div id="page">
      <Navigation />
      <Routes>
+      <Route path='/' element = {<Home />} />
       <Route path='/places' element = { <PlacesList />} />
       <Route path='/places/:id' element = {<PlaceDetails />} />
       <Route path='/places/:id/edit' element = {<PlaceEdit />} />
       <Route path='/registration' element={<Registration />} />
       <Route path='/login' element = {<Login />} />
+      <Route path='/about' element ={<About />} />
 
       <Route element = {<AuthGuard />} >
       <Route path='/places/create' element = {<PlacesAdd />} />
