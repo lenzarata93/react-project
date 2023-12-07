@@ -52,6 +52,9 @@ function App() {
     username : auth.username,
     email : auth.email,
     isAuth : !!auth.accessToken,
+    userId : auth._id
+  
+
   }
  
   return (
