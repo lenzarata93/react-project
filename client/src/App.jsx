@@ -59,11 +59,15 @@ function App() {
      <Navigation />
      <Routes>
       <Route path='/places' element = { <PlacesList />} />
-      <Route path='/places/create' element = {<AuthGuard><PlacesAdd /></AuthGuard>} />
       <Route path='/places/:id' element = {<PlaceDetails />} />
       <Route path='/registration' element={<Registration />} />
       <Route path='/login' element = {<Login />} />
-      <Route path='/logout' element = {<AuthGuard><Logout /></AuthGuard>} />
+
+      <Route element = {<AuthGuard />} >
+      <Route path='/places/create' element = {<PlacesAdd />} />
+      <Route path='/logout' element = {<Logout />} />
+      </Route>
+
      </Routes>
  
      <Footer />
