@@ -27,4 +27,7 @@ export const edit= async(id,placeData) =>{
     const result = await request.put(`${baseUrl}/${id}`,placeData);
        return result;
   };
+  export const del =async (id) =>{
+    const result =await  request.del(`${baseUrl}/${id}`);
+  }
 

@@ -47,6 +47,11 @@
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  text-decoration: none;
 }
  .btn:hover {
   background-color: #0056b3;
@@ -57,4 +62,38 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 30px;
+}
+.btnDel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width:250px;
+  padding: 15px 50px;
+  border: 100px;
+  border-radius: 1000=px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btnDel:hover{
+  background-color: #0056b3;
+}
+.btnEdit{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width:250px;
+  padding: 15px 50px;
+  border: 100px;
+  border-radius: 1000=px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
 }

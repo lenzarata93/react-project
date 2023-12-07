@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import * as placeService from '../../services/placeService'
 import { useState } from "react";
 import styles from '../Places/Place-Details.module.css'
@@ -9,6 +9,8 @@ import AuthContext from "../contexts/authContext";
 export default function PlaceDetails(){
     const {username , userId} = useContext(AuthContext);
     const [place,setPlace] = useState({});
+
+    const navigate = useNavigate();
 
     const {id} = useParams();
     console.log(id)
@@ -20,6 +22,15 @@ placeService.getOne(id)
 console.log(place);
 
 const isOwner = userId===place._ownerId;
+
+const onDelete = async () =>{
+const hasConfirmed = confirm(`Сигурен ли си,че искаш да изтриеш ${place.name}?`);
+if(hasConfirmed){
+    await placeService.del(id);
+    navigate('/places')
+    
+}
+}
 return (<>
     <h1>{place.name}</h1>
     <img className= "img" src={place.imgUrl} alt={place.name} />
@@ -27,17 +38,16 @@ return (<>
     <p><strong>Местоположение:</strong> {place.location}</p>
 
     {isOwner && (
-   <div className={styles.divBtn}>
-    <Link className={styles.btn} to={`/places/${id}/edit`}>EDIT</Link>
-    <Link className={styles.btn}to={`/places/${id}/delete`}>DELETE</Link>
-   
-   </div>
+  <div className={`${styles.divBtn} `}>
+  <Link className={`${styles.btnEdit} `} to={`/places/${id}/edit`}>EDIT</Link>
+  <button className={`${styles.btnEdit} `} onClick={onDelete}>DELETE</button>
+</div>
     )}
  
 
     <div className={styles.addComment}>
         <textarea placeholder="Добави коментар"></textarea>
-        <button onclick="addComment()">Добави</button>
+        <Link className={styles.btnEdit} onclick="addComment()">Добави</Link>
     </div>
 
  
