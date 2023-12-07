@@ -37,4 +37,24 @@
   .addComment button:hover {
     background-color: #0056b3;
   }
-  
+
+.btn {  width: 100%;
+  max-width:150px;
+  padding: 15px 50px;
+  border: 10px;
+  border-radius: 1000=px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+ .btn:hover {
+  background-color: #0056b3;
+}
+
+.divBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}

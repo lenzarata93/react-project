@@ -11,6 +11,7 @@ import { useState } from 'react'
 import AuthContext from './components/contexts/authContext'
 import * as authService from './services/authService'
 import AuthGuard from './components/AuthGuard'
+import PlaceEdit from './components/Places/Place-Edit'
 
 function App() {
   const navigate = useNavigate();
@@ -60,6 +61,7 @@ function App() {
      <Routes>
       <Route path='/places' element = { <PlacesList />} />
       <Route path='/places/:id' element = {<PlaceDetails />} />
+      <Route path='/places/edit/:id' element = {<PlaceEdit />} />
       <Route path='/registration' element={<Registration />} />
       <Route path='/login' element = {<Login />} />
 

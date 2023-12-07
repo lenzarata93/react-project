@@ -20,6 +20,10 @@ return (<>
     <img className= "img" src={place.imgUrl} alt={place.name} />
     <p>{place.description}</p>
     <p><strong>Местоположение:</strong> {place.location}</p>
+    <div className={styles.divBtn}>
+    <button className={styles.btn}>Промени</button>
+    <button className={styles.btn}>Изтрий</button>
+    </div>
 
     <div className={styles.addComment}>
         <textarea placeholder="Добави коментар"></textarea>
