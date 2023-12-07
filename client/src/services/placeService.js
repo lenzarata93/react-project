@@ -24,7 +24,7 @@ export const getOne = async (placeId) => {
     return result;
 };
 export const edit= async(id,placeData) =>{
-    const result = await request.post(`${baseUrl}/${id}`,placeData);
+    const result = await request.put(`${baseUrl}/${id}`,placeData);
        return result;
   };
 
