@@ -10,4 +10,9 @@ const newComment = await request.post(`${baseUrl}`,{
 });
 
 return newComment;
-}
+};
+
+export const getAll=async (id)=>{
+const result=await request.get(baseUrl)
+return Object.values(result)
+};

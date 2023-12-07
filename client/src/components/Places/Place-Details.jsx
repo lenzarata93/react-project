@@ -10,6 +10,7 @@ import * as commentService from '../../services/commentService'
 export default function PlaceDetails(){
     const {username , userId} = useContext(AuthContext);
     const [place,setPlace] = useState({});
+    const[comments,setComments] = useState([]);
 
     const navigate = useNavigate();
 
@@ -19,6 +20,9 @@ export default function PlaceDetails(){
 useEffect(()=>{
 placeService.getOne(id)
     .then(setPlace);
+
+    commentService.getAll(id)
+    .then(setComments);
 }, [id]);
 console.log(place);
 
@@ -37,8 +41,10 @@ const addComment =async (e) =>{
     e.preventDefault();
     const formData= new FormData(e.currentTarget)
     const comment = formData.get('comment')
+    console.log(comment)
 const newComment= await commentService.createComment(id,username,comment);
 console.log(newComment)
+console.log(`Comments is ${comment}`)
 
 }
 return (<>
@@ -66,9 +72,16 @@ return (<>
     <div>
         <h2>Коментари</h2>
         <ul>
- 
+        {comments.map(comment => (
+                <li key={comment._id}>
+                    <p>{comment.username} : {comment.comment}</p>
+                </li>
+            ))}
         </ul>
-        <p id="no-comments-message" >Все още няма коментари.</p>
+        {comments.length ===0 &&(
+            <p id="no-comments-message" >Все още няма коментари.</p>
+
+        )}
     </div>
 
 </>
