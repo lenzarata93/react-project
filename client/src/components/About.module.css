@@ -1,0 +1,17 @@
+.about {
+    background-image: url(../../public/bg1.jpg);
+    width: 1300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h2, h3, h4 {
+    font-style: oblique;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-stretch: narrower;
+    margin: 10px 0; /* Променете големината на отстоянието според вашите предпочитания */
+}
