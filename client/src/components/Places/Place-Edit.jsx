@@ -23,7 +23,13 @@ const editPlace = async (e)=>{
 
 }
 
-console.log(place)
+const onChange = (e)=>{
+
+    setPlace(state =>({
+        ...state,
+        [e.target.name] : e.target.value
+    }))
+};
     return(
         <section>
         <h1>
@@ -32,13 +38,13 @@ console.log(place)
             </h1>
         <form onSubmit={editPlace}>
           <label htmlFor="name">Име:</label>
-          <input type="text" value ={place.name} id="name" name="name" required="" onChange={(e) => setPlace({ ...place, name: e.target.value })}/>
+          <input type="text" value ={place.name} id="name" name="name" required="" onChange={onChange}/>
           <label htmlFor="location">Местоположение:</label>
-          <input type="text" value = {place.location} id="location" name="location" required=""onChange={(e) => setPlace({ ...place, location: e.target.value })} />
+          <input type="text" value = {place.location} id="location" name="location" required=""onChange={onChange} />
           <label htmlFor="description">Описание:</label>
-          <input type="text" value={place.description} id="description" name="description" required=""onChange={(e) => setPlace({ ...place, description: e.target.value })} />
+          <input type="text" value={place.description} id="description" name="description" required=""onChange={onChange} />
          <label htmlFor="Снимка">Снимка:</label>
-          <input type="imgUrl" value={place.imgUrl} id="imgUrl" name="imgUrl" required="" onChange={(e) => setPlace({ ...place, imgUrl: e.target.value })} />
+          <input type="imgUrl" value={place.imgUrl} id="imgUrl" name="imgUrl" required="" onChange={onChange} />
           <input type="submit"value="Запази промените" />
         </form>
         

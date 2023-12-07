@@ -5,6 +5,7 @@ import { useState } from "react";
 import styles from '../Places/Place-Details.module.css'
 import { useContext } from "react";
 import AuthContext from "../contexts/authContext";
+import * as commentService from '../../services/commentService'
 
 export default function PlaceDetails(){
     const {username , userId} = useContext(AuthContext);
@@ -30,6 +31,15 @@ if(hasConfirmed){
     navigate('/places')
     
 }
+};
+
+const addComment =async (e) =>{
+    e.preventDefault();
+    const formData= new FormData(e.currentTarget)
+    const comment = formData.get('comment')
+const newComment= await commentService.createComment(id,username,comment);
+console.log(newComment)
+
 }
 return (<>
     <h1>{place.name}</h1>
@@ -46,8 +56,10 @@ return (<>
  
 
     <div className={styles.addComment}>
-        <textarea placeholder="Добави коментар"></textarea>
-        <Link className={styles.btnEdit} onclick="addComment()">Добави</Link>
+        <form onSubmit={addComment}>
+            <textarea name="comment" placeholder="Коментирай"></textarea>
+            <input  type="submit" value='Коментирай'></input>
+        </form>
     </div>
 
  
