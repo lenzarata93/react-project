@@ -10,6 +10,7 @@ import PlaceDetails from './components/Places/Place-Details'
 import { useState } from 'react'
 import AuthContext from './components/contexts/authContext'
 import * as authService from './services/authService'
+import AuthGuard from './components/AuthGuard'
 
 function App() {
   const navigate = useNavigate();
@@ -58,11 +59,11 @@ function App() {
      <Navigation />
      <Routes>
       <Route path='/places' element = { <PlacesList />} />
-      <Route path='/places/create' element = {<PlacesAdd />} />
+      <Route path='/places/create' element = {<AuthGuard><PlacesAdd /></AuthGuard>} />
       <Route path='/places/:id' element = {<PlaceDetails />} />
       <Route path='/registration' element={<Registration />} />
       <Route path='/login' element = {<Login />} />
-      <Route path='/logout' element = {<Logout />} />
+      <Route path='/logout' element = {<AuthGuard><Logout /></AuthGuard>} />
      </Routes>
  
      <Footer />
