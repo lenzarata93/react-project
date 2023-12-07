@@ -50,7 +50,7 @@ const {values,onChange,onSubmit} = useForm(registerSubmitHandler,{
   />
   <br />
   <br />
-  <input type="submit" defaultValue="Регистрация" />
+  <input type="submit" value="Регистрация" />
   <p>
     Вече имаш регистрация? <Link to="/login">Влез</Link>
   </p>

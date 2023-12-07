@@ -19,8 +19,12 @@ export const create= async(placeData) =>{
 };
 export const getOne = async (placeId) => {
     const result = await request.get(`${baseUrl}/${placeId}`);
-    console.log(`in getOne result is : ${result}`)
+    console.log(`in getOne result is : ${Object.values(result)}`)
 
     return result;
 };
+export const edit= async(id,placeData) =>{
+    const result = await request.post(`${baseUrl}/${id}`,placeData);
+       return result;
+  };
 

@@ -25,7 +25,7 @@ export default function PlacesAdd(){
   <input type="text" id="description" name="description" required="" />
  <label htmlFor="Снимка">Снимка:</label>
   <input type="imgUrl" id="imgUrl" name="imgUrl" required="" />
-  <input type="submit" defaultValue="Изпрати" />
+  <input type="submit" value="Добави обект" />
 </form>
 
       </section>

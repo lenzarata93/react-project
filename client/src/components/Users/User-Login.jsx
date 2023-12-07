@@ -31,7 +31,7 @@ const {loginSubmitHandler} = useContext(AuthContext);
     onChange={onChange} />
     <br />
     <br />
-    <input type="submit" defaultValue="Вход" />
+    <input type="submit" value="Вход" />
   </form>
   <p>
     Все още нямаш регистрация? <a href="/register">Направи я сега</a>

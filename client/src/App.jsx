@@ -64,7 +64,7 @@ function App() {
      <Routes>
       <Route path='/places' element = { <PlacesList />} />
       <Route path='/places/:id' element = {<PlaceDetails />} />
-      <Route path='/places/edit/:id' element = {<PlaceEdit />} />
+      <Route path='/places/:id/edit' element = {<PlaceEdit />} />
       <Route path='/registration' element={<Registration />} />
       <Route path='/login' element = {<Login />} />
 

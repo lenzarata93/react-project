@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import * as placeService from '../../services/placeService'
 import { useState } from "react";
 import styles from '../Places/Place-Details.module.css'
@@ -28,8 +28,9 @@ return (<>
 
     {isOwner && (
    <div className={styles.divBtn}>
-   <button className={styles.btn}>Промени</button>
-   <button className={styles.btn}>Изтрий</button>
+    <Link className={styles.btn} to={`/places/${id}/edit`}>EDIT</Link>
+    <Link className={styles.btn}to={`/places/${id}/delete`}>DELETE</Link>
+   
    </div>
     )}
  
