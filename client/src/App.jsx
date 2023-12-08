@@ -14,6 +14,8 @@ import AuthGuard from './components/AuthGuard'
 import PlaceEdit from './components/Places/Place-Edit'
 import Home from './components/Home'
 import About from './components/About'
+import showError from './lib/errorUtil'
+
 
 function App() {
   const navigate = useNavigate();
@@ -24,21 +26,51 @@ function App() {
 
   const loginSubmitHandler = async(values) => {
     console.log(values);
-    const result = await authService.login(values.email,values.password)
-    console.log(result);
-    setAuth(result);
-    localStorage.setItem('accessToken', result.accessToken);
-    navigate('/')
+    try {
+      const result = await authService.login(values.email,values.password)
+      console.log(result);
+      setAuth(result);
+      localStorage.setItem('accessToken', result.accessToken);
+      navigate('/')
+      
+    } catch (error) {
+      showError(error)
+    }
+   
   };
 
   const registerSubmitHandler = async (values) =>{
-    console.log(values);
+    console.log(`Стойности при регистрация са : ${Object.values(values)}`);
+
+    try {
+      if(!values.email || !values.username || !values.password || !values.confirm_password){
+        throw new Error ('Всички полета са задължителни!')
+      }
+    } catch (error) {
+      showError(error)
+    }
+
+    try {
+      if (values.password !== values.confirm_password) {
+          throw new Error('Паролите не съвпадат.');
+      }
+  } catch (error) {
+    
+     showError(error);
+  }
+
+  try {
     const result = await authService.register(values.email,values.password,values.username);
 
     console.log(`The result is : ${result.username}`)
     setAuth(result);
     localStorage.setItem('accessToken', result.accessToken);
     navigate('/');
+  } catch (error) {
+    showError(error)
+  }
+
+    
   };
 
   const logoutHandler =() => {
