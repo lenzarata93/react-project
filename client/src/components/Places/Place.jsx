@@ -8,8 +8,8 @@ export default function Place({
     location,
 }){
 return(
-    <div className={styles.container} >
-    <article className= {styles.article}>
+    <div  >
+    <article >
         <img  src={imgUrl}></img>
         <h2>{name}</h2>
         <h2>{location}</h2>

@@ -1,41 +1,19 @@
-/* Стилове за структурата на статията */
-.article {
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    flex: 2; /* Артикулите заемат равни части от контейнера */
-  max-width: calc(33.33% - 20px); 
-  }
-  
-  .article img {
-    width: 100%;
-    max-width: 100px; /* Максимална ширина на изображението */
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  
-  .article h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .article p {
-    margin-bottom: 15px;
-  }
-  
-  .article a {
-    text-decoration: none;
-    color: #007bff;
-    transition: color 0.3s ease;
-  }
-  
-  .article a:hover {
-    color: #0056b3;
-  }
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%; /* Гарантира, че елементът е 100% широк */
+  border: 1px solid #ccc; /* Добавя рамка за ясно разграничение */
+  padding: 10px; /* Добавя отстъпи на елемента */
+}
+
+img {
+  width: 110%; /* Позволява снимката да се показва правилно */
+  height: 100%; /* Запазва съотношението на страните на снимката */
+  border-radius: 15px; /* Закръгляване на краищата на снимката */
+}
+
+h2, p {
+  margin: 10px 0; 
+}
