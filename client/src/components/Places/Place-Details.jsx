@@ -41,10 +41,10 @@ const addComment =async (e) =>{
     e.preventDefault();
     const formData= new FormData(e.currentTarget)
     const comment = formData.get('comment')
-    console.log(comment)
+
 const newComment= await commentService.createComment(id,username,comment);
-console.log(newComment)
-console.log(`Comments is ${comment}`)
+
+setComments(state => [...state, newComment]);
 
 }
 return (<>
@@ -72,13 +72,15 @@ return (<>
     <div>
         <h2>Коментари</h2>
         <ul>
+            <div>
         {comments.map(comment => (
                 <li key={comment._id}>
                     <p>{comment.username} : {comment.comment}</p>
                 </li>
             ))}
+            </div>
         </ul>
-        {comments.length ===0 &&(
+        {comments.length === 0 &&(
             <p id="no-comments-message" >Все още няма коментари.</p>
 
         )}

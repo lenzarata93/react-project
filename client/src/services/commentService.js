@@ -13,6 +13,9 @@ return newComment;
 };
 
 export const getAll=async (id)=>{
-const result=await request.get(baseUrl)
-return Object.values(result)
+const result=await request.get(baseUrl);
+const query = new URLSearchParams({
+    where : `id="${id}"`
+})
+return Object.values(result).filter(comment => comment.placeId === id)
 };
