@@ -49,8 +49,8 @@ setComments(state => [...state, newComment]);
 
 }
 return (<>
-    <h1>{place.name}</h1>
-    <img className= "img" src={place.imgUrl} alt={place.name} />
+    <h1><center>{place.name}</center></h1>
+    <img className= {styles.img} src={place.imgUrl} alt={place.name} />
     <p>{place.description}</p>
     <p><strong>Местоположение:</strong> {place.location}</p>
 
@@ -61,13 +61,13 @@ return (<>
 </div>
     )}
  
-
-    <div className={styles.addComment}>
+{username && ( <div className={styles.addComment}>
         <form onSubmit={addComment}>
             <textarea name="comment" placeholder="Коментирай"></textarea>
             <input  type="submit" value='Коментирай'></input>
         </form>
-    </div>
+    </div>)}
+   
 
  
     <div>
