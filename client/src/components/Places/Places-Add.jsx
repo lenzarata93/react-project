@@ -1,5 +1,6 @@
 import {create} from '../../services/placeService';
 import {useNavigate} from 'react-router-dom';
+import styles from './Places-Add.module.css'
 
 export default function PlacesAdd(){
   const navigate=useNavigate();

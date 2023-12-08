@@ -98,11 +98,11 @@
   text-decoration: none;
 }
 .img {
-  display: block; /* Позволява да бъде центрирана и да се добавят отстъпи */
-  max-width: 85%; /* Запазва съотношението на страните на снимката */
-  width: 85%; /* Задава ширината на снимката */
-  height: auto; /* Запазва съотношението на страните на снимката */
-  margin: auto; /* Центрира снимката хоризонтално */
-  border-radius: 8px; /* Закръгляване на краищата на снимката */
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Добавя тен на снимката */
+  display: block; 
+  max-width: 85%; 
+  width: 85%; 
+  height: auto;
+  margin: auto; 
+  border-radius: 8px; 
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); 
 }
