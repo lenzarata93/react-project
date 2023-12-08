@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom"
 import { edit, getOne } from "../../services/placeService";
 import { useState } from "react";
+import showError from "../../lib/errorUtil";
 
 export default function PlaceEdit(){
     const navigate  = useNavigate()
@@ -18,8 +19,16 @@ const editPlace = async (e)=>{
     
     e.preventDefault();
     const placeData = Object.fromEntries(new FormData(e.currentTarget));
-    const result = await edit(id,placeData);
-    navigate(`/places/${id}`);
+    try {
+        if(!placeData.name || !placeData.location || !placeData.imgUrl || !placeData.description){
+            throw new Error('All fields are required')
+          }
+          const result = await edit(id,placeData);
+          navigate(`/places/${id}`);
+    } catch (error) {
+        showError(error)
+    }
+  
 
 }
 
