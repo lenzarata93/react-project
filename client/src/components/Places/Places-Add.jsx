@@ -1,6 +1,7 @@
 import {create} from '../../services/placeService';
 import {useNavigate} from 'react-router-dom';
 import styles from './Places-Add.module.css'
+import showError from '../../lib/errorUtil';
 
 export default function PlacesAdd(){
   const navigate=useNavigate();
@@ -8,10 +9,19 @@ export default function PlacesAdd(){
     e.preventDefault();
 
     const placeData = Object.fromEntries(new FormData(e.currentTarget));
-    //console.log(placeData);
+    try {
+      if(!placeData.name || !placeData.location || !placeData.imgUrl || !placeData.description){
+        throw new Error('All fields are required')
+      }
     const result=await create(placeData);
     console.log(result);
     navigate('/places');
+
+      
+    } catch (error) {
+      showError(error)
+    }
+ 
 
   }
     return (

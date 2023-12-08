@@ -40,8 +40,6 @@ function App() {
   };
 
   const registerSubmitHandler = async (values) =>{
-    console.log(`Стойности при регистрация са : ${Object.values(values)}`);
-
     try {
       if(!values.email || !values.username || !values.password || !values.confirm_password){
         throw new Error ('Всички полета са задължителни!')
