@@ -6,6 +6,7 @@ import styles from '../Places/Place-Details.module.css'
 import { useContext } from "react";
 import AuthContext from "../contexts/authContext";
 import * as commentService from '../../services/commentService'
+import Comments from "./Comments";
 
 export default function PlaceDetails(){
     const {username , userId} = useContext(AuthContext);
@@ -74,9 +75,7 @@ return (<>
         <ul>
             <div>
         {comments.map(comment => (
-                <li key={comment._id}>
-                    <p>{comment.username} : {comment.comment}</p>
-                </li>
+                <Comments {...comment}/>
             ))}
             </div>
         </ul>
