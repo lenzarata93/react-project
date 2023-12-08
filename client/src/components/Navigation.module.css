@@ -1,5 +1,5 @@
 nav {
-    background-color: #333; /* Цвят на навигационната лента */
+    background-color: #333;
     overflow: hidden;
   }
 img {
@@ -22,7 +22,7 @@ height: 130px;
   
   nav li a {
     display:flex;
-    color: white; /* Цвят на текста */
+    color: white;
     text-align:start ;
     padding: 5px 35px;
     text-decoration: wavy;
